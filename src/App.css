@@ -1,38 +1,55 @@
+/* src/App.css */
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100vh; /* 전체 화면 높이 */
+  width: 100vw;  /* 전체 화면 너비 */
+  background-color: rgb(28, 154, 232);
+  overflow: hidden; /* 화면 넘침 방지 */
+  position: relative; /* 자식 요소의 절대 위치 설정을 위해 */
 }
 
-.App-link {
-  color: #61dafb;
+.bold-text {
+  font-weight: bold; /* 글씨체를 굵게 설정 */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.introP{
+  font-size: 2rem;
+}
+
+.frontP{
+  font-size : 6rem;
+  font-weight: bold;
+  opacity: 0.5;
+}
+
+.intro, .frontEnd {
+  color : white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+}
+
+.intro {
+  opacity: 1; /* 초기 상태에서 보이도록 설정 */
+}
+
+.frontEnd {
+  opacity: 0; /* 초기 상태에서 숨김 */
+  visibility: hidden; /* 초기 상태에서 숨김 */
+
+}
+
+.frontEnd-active {
+  opacity: 1; /* 상태가 활성화될 때 보이도록 설정 */
+  visibility: visible; /* 상태가 활성화될 때 보이도록 설정 */
+}
+
+.intro-exit {
+  opacity: 0; /* `intro`가 숨겨질 때 투명하게 설정 */
+  visibility: hidden; /* `intro`가 숨겨질 때 숨김 */
 }
